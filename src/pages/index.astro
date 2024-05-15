@@ -1,0 +1,127 @@
+---
+import Main from '../layouts/Main.astro'
+import Window from '../components/Window.astro'
+import Content from '../components/WindowContent.astro'
+import MainContent from '../components/MainContent.vue'
+---
+
+
+<Main title="Pedro Barros Parente">
+	<main class="p-12 w-screen h-screen">
+		<section class="grid grid-cols-12 grid-rows-2 gap-6 w-full h-full">
+			<Window title="Pedro Barros Parente" custom="col-span-4 row-span-1 scale-anim">
+				<img src="/profile-img.png" alt="" class="w-full h-full object-cover aspect-[12]">
+			</Window>
+			
+			<Window title="Contact" custom="col-span-4 row-span-1 row-start-2 scale-anim">
+				<Content custom="flex-col">
+					<p>Nom: <span>Pedro Barros Parente</span></p>
+					<p>Âge: <span>23 ans</span></p>
+					<p>E-mail: <span>parente.pb@gmail.com</span></p>
+					<p>Téléphone: <span>06 13 75 08 00</span></p>
+				</Content>
+				<Content custom="justify-center flex-row">
+					<a href="">CV</a>
+					<a href="">Linkedin</a>
+					<a href="">GitHub</a>
+				</Content>
+			</Window>
+
+			<div class="col-span-6 row-span-2 scale-anim">
+				<MainContent client:load/>
+			</div>
+
+			<Window title="Demo" custom="col-span-2 row-span-2 scale-anim">
+
+			</Window>
+		</section>
+	</main>
+</Main>
+
+<style>
+	span{
+		letter-spacing: 2px;
+	}
+
+</style>
+
+<script>
+import {gsap} from 'gsap';
+import TextScramble from '../script/scrambleText.js'
+
+const h2Texts = [];
+const h2Elements = document.getElementsByTagName('H2');
+for (const h2 of h2Elements) {
+	h2Texts.push(h2.innerText);
+	h2.innerText = '';
+}
+
+const pTexts = [];
+const pElements = document.getElementsByTagName('P');
+for (const p of pElements) {
+	pTexts.push(p.innerText);
+	p.innerText = '';
+}
+
+const aTexts = [];
+const aElements = document.getElementsByTagName('A');
+for (const a of aElements) {
+	aTexts.push(a.innerText);
+	a.innerText = '';
+}
+
+
+window.addEventListener("load", function () {
+
+	gsap.delayedCall(0.3, restoreH2Texts);
+	gsap.delayedCall(0.2, restorePTexts);
+	gsap.delayedCall(0.2, restoreATexts);
+
+	gsap.fromTo(".scale-anim",
+		{ 
+			scale: 0 
+		},
+
+		{
+			scale: 1,
+			stagger: 0.1,
+			duration: 0.5,
+			ease: 'power2.out',
+			// onComplete: restoreH2Texts,
+		}
+	);
+});
+
+function restoreH2Texts() {
+    const el = document.getElementsByTagName('H2');
+	
+    for (let i = 0; i < h2Texts.length; ++i) {
+		const fx = new TextScramble(el[i]);
+		// el[i].innerText = h2Texts[i];
+		fx.setText(h2Texts[i]);
+		console.log(h2Texts[i]);
+    }
+}
+
+function restorePTexts() {
+    const el = document.getElementsByTagName('P');
+	
+    for (let i = 0; i < pTexts.length; ++i) {
+		const fx = new TextScramble(el[i]);
+		// el[i].innerText = h2Texts[i];
+		fx.setText(pTexts[i]);
+		console.log(pTexts[i]);
+    }
+}
+
+function restoreATexts() {
+    const el = document.getElementsByTagName('A');
+	
+    for (let i = 0; i < aTexts.length; ++i) {
+		const fx = new TextScramble(el[i]);
+		// el[i].innerText = h2Texts[i];
+		fx.setText(aTexts[i]);
+		console.log(aTexts[i]);
+    }
+}
+</script>

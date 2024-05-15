@@ -1,0 +1,12 @@
+---
+interface Props {
+	custom?: string;
+}
+
+const { custom } = Astro.props;
+---
+
+<!-- Main content  -->
+<div class={`flex w-full h-fit p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid ${custom}`}>
+    <slot />
+</div>

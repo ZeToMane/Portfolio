@@ -1,0 +1,86 @@
+[
+    {
+    "id": "1",
+    "title": "Project 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim vel est tincidunt hendrerit.",
+    "category": "Web Development",
+    "imagePaths": [
+        "/profile-img.png",
+        "/profile-img.png",
+        "/profile-img.png"
+    ],
+    "liveLink": "https://www.example.com/project1",
+    "thumbnailPath": "profile-img.png",
+    "textLink": "Demo"
+    },
+    
+    {
+    "id": "2",
+    "title": "Project 2",
+    "description": "Praesent gravida risus vel felis blandit, id ultricies eros fermentum. Vestibulum vehicula tristique ex.",
+    "category": "Mobile App",
+    "imagePaths": [
+        "/profile-img.png",
+        "/profile-img.png",
+        "/profile-img.png"
+    ],
+    "liveLink": "https://www.example.com/project2",
+    "thumbnailPath": "profile-img.png"
+    },
+
+    {
+    "id": "3",
+    "title": "Project 3",
+    "description": "Sed faucibus diam nec justo interdum, in dictum libero fermentum. Aliquam eu lacus sed libero varius vehicula.",
+    "category": "Data Science",
+    "imagePaths": [
+        "/profile-img.png",
+        "/profile-img.png",
+        "/profile-img.png"
+    ],
+    "liveLink": "https://www.example.com/project3",
+    "thumbnailPath": "profile-img.png"
+    },
+
+    {
+    "id": "4",
+    "title": "Project 4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim vel est tincidunt hendrerit.",
+    "category": "Web Development",
+    "imagePaths": [
+        "/profile-img.png",
+        "/profile-img.png",
+        "/profile-img.png"
+    ],
+    "liveLink": "https://www.example.com/project1",
+    "thumbnailPath": "profile-img.png"
+    },
+    
+    {
+    "id": "5",
+    "title": "Project 5",
+    "description": "Praesent gravida risus vel felis blandit, id ultricies eros fermentum. Vestibulum vehicula tristique ex.",
+    "category": "Mobile App",
+    "imagePaths": [
+        "/profile-img.png",
+        "/profile-img.png",
+        "/profile-img.png"
+    ],
+    "liveLink": "https://www.example.com/project2",
+    "thumbnailPath": "profile-img.png"
+    },
+
+    {
+    "id": "6",
+    "title": "Project 6",
+    "description": "Sed faucibus diam nec justo interdum, in dictum libero fermentum. Aliquam eu lacus sed libero varius vehicula.",
+    "category": "Data Science",
+    "imagePaths": [
+        "/profile-img.png",
+        "/profile-img.png",
+        "/profile-img.png"
+    ],
+    "liveLink": "https://www.example.com/project3",
+    "thumbnailPath": "profile-img.png"
+    }
+]

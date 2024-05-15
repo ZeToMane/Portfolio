@@ -1,0 +1,17 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+<button class="flex justify-center items-center self-center border-t border-l border-r-[3px] border-b-[3px] border-solid border-black bg-white group">
+    <div class="flex m-[1px] py-[2px] px-2 justify-center items-center self-center gap-1 border-2 border-solid border-black bg-white">
+        <h2 class="text-black stroke-[0.5px] stroke-black font-normal leading-normal text-stroke">
+            >
+        </h2>
+        <h2 class="text-black font-normal leading-normal">
+            {title}
+        </h2>
+    </div>
+</button>
