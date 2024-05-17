@@ -3,6 +3,7 @@ import Main from '../layouts/Main.astro'
 import Window from '../components/Window.astro'
 import Content from '../components/WindowContent.astro'
 import MainContent from '../components/MainContent.vue'
+import ThreeCanvas from '../components/ThreeCanvas'
 ---
 
 
@@ -10,7 +11,10 @@ import MainContent from '../components/MainContent.vue'
 	<main class="p-12 w-screen h-screen">
 		<section class="grid grid-cols-12 grid-rows-2 gap-6 w-full h-full">
 			<Window title="Pedro Barros Parente" custom="col-span-4 row-span-1 scale-anim">
-				<img src="/profile-img.png" alt="" class="w-full h-full object-cover aspect-[12]">
+				<!-- <img src="/profile-img.png" alt="" class="w-full h-full object-cover aspect-[12]"> -->
+				<div class="w-full h-full" id="root">
+					<ThreeCanvas client:only="react" />
+				</div>
 			</Window>
 			
 			<Window title="Contact" custom="col-span-4 row-span-1 row-start-2 scale-anim">
@@ -42,7 +46,6 @@ import MainContent from '../components/MainContent.vue'
 	span{
 		letter-spacing: 2px;
 	}
-
 </style>
 
 <script>
@@ -87,7 +90,6 @@ window.addEventListener("load", function () {
 			stagger: 0.1,
 			duration: 0.5,
 			ease: 'power2.out',
-			// onComplete: restoreH2Texts,
 		}
 	);
 });
