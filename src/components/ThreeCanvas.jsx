@@ -44,41 +44,76 @@ function Pedro(props) {
 }
 
 export default function App() {
+    // const [show, setShow] = useState(false);
+
+    // useEffect(() => {
+    //     console.log('entering useEffect');
+    //     const handleLoad = () => {
+    //         console.log('Page fully loaded');
+    //         const tweens = gsap.getTweensOf('.scale-anim');
+
+    //         if (tweens.length > 0) {
+    //             const tween = tweens[0];
+    //             console.log('Found tween:', tween.isActive);
+    //             if(tween.isActive){
+    //                 console.log("je suis active moi")
+    //             }
+    //             tween.eventCallback('onComplete', () => {
+    //                 console.log('Animation complete');
+    //                 setShow(true);
+    //                 window.dispatchEvent(new Event('resize'));
+    //                 console.log("resizeeee")
+    //             });
+    //         } else {
+    //             console.log('No tweens found for .scale-anim');
+    //         }
+    //     };
+
+    //     window.addEventListener('load', handleLoad); 
+
+    //     return () => {
+    //         window.removeEventListener('load', handleLoad);
+    //     };
+    // }, []);
+
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        const handleLoad = () => {
-            console.log('Page fully loaded');
-            const tweens = gsap.getTweensOf('.scale-anim');
+        
+        const tween = gsap.fromTo(".scale-anim",
+            { 
+                scale: 0 
+            },
 
-            if (tweens.length > 0) {
-                const tween = tweens[0];
-                console.log('Found tween:', tween);
-                tween.eventCallback('onComplete', () => {
+            {
+                scale: 1,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: 'power2.out',
+                onComplete: () => {
                     console.log('Animation complete');
                     setShow(true);
-                });
-            } else {
-                console.log('No tweens found for .scale-anim');
+                    window.dispatchEvent(new Event('resize'));
+                }
             }
-        };
-
-        window.addEventListener('load', handleLoad); 
+        );
 
         return () => {
-            window.removeEventListener('load', handleLoad);
+            tween.kill();
         };
     }, []);
 
     return (
-        show && (
+        // show && (
             <Canvas camera={{ position: [0, 0, 15] }}>
-                <Suspense>
-                <ambientLight />
-                <directionalLight position={[10, 10, 10]} />
-                <Pedro />
-                </Suspense>
+                {show && (
+                    <Suspense>
+                    <ambientLight />
+                    <directionalLight position={[10, 10, 10]} />
+                    <Pedro />
+                    </Suspense>
+                )}
             </Canvas>
-        )
+        // )
     )
 }

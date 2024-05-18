@@ -4,6 +4,7 @@ import Window from '../components/Window.astro'
 import Content from '../components/WindowContent.astro'
 import MainContent from '../components/MainContent.vue'
 import ThreeCanvas from '../components/ThreeCanvas'
+
 ---
 
 
@@ -15,7 +16,7 @@ import ThreeCanvas from '../components/ThreeCanvas'
 				<!-- <div class="w-full h-full" id="root">
 					<ThreeCanvas client:only="react"/>
 				</div> -->
-				<ThreeCanvas client:only="react"/>
+				<ThreeCanvas client:only="react" />
 			</Window>
 			
 			<Window title="Contact" custom="col-span-4 row-span-1 row-start-2 scale-anim">
@@ -75,24 +76,14 @@ for (const a of aElements) {
 }
 
 
-window.addEventListener("load", function () {
+window.addEventListener("DOMContentLoaded", function () {
+	console.log("ggggsap");
 
 	gsap.delayedCall(0.3, restoreH2Texts);
 	gsap.delayedCall(0.2, restorePTexts);
 	gsap.delayedCall(0.2, restoreATexts);
 
-	gsap.fromTo(".scale-anim",
-		{ 
-			scale: 0 
-		},
-
-		{
-			scale: 1,
-			stagger: 0.1,
-			duration: 0.5,
-			ease: 'power2.out',
-		}
-	);
+	
 });
 
 function restoreH2Texts() {
