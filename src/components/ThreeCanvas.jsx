@@ -1,22 +1,21 @@
 import * as THREE from 'three'
-import { useRef, useState, useEffect } from 'react'
+import { Suspense, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 import { easing } from 'maath'
 import {gsap} from 'gsap';
 
 
-function Suzanne(props) {
+function Pedro(props) {
     const mesh = useRef()
-    const { nodes } = useGLTF('./suzanne.glb')
+    const { nodes, materials } = useGLTF('./me-finished100px.glb')
     const [dummy] = useState(() => new THREE.Object3D())
 
-      // Define the maximum rotation angles in radians
-    const maxRotationX = Math.PI / 5 
-    const maxRotationY = Math.PI / 5 
-    const maxRotationZ = Math.PI / 5 
-
     useEffect(() => {
+        if (nodes.head.geometry) {
+            nodes.head.geometry.center();
+        }
+
         const handleMouseMove = (event) => {
         const canvas = document.querySelector('canvas')
         const rect = canvas.getBoundingClientRect()
@@ -35,21 +34,11 @@ function Suzanne(props) {
 
     useFrame((state, dt) => {
         easing.dampQ(mesh.current.quaternion, dummy.quaternion, 0.15, dt)
-
-        const euler = new THREE.Euler().setFromQuaternion(mesh.current.quaternion, 'XYZ')
-
-        // Clamp the rotation angles
-        euler.x = THREE.MathUtils.clamp(euler.x, -maxRotationX, maxRotationX)
-        euler.y = THREE.MathUtils.clamp(euler.y, -maxRotationY, maxRotationY)
-        euler.z = THREE.MathUtils.clamp(euler.z, -maxRotationZ, maxRotationZ)
-
-        // Update the quaternion with the clamped angles
-        mesh.current.quaternion.setFromEuler(euler)
     })
 
     return (
-        <mesh ref={mesh} geometry={nodes.Suzanne.geometry} {...props}>
-        <meshNormalMaterial />
+        <mesh ref={mesh} geometry={nodes.head.geometry} material={materials['Flo_Head']} {...props}>
+        {/* <meshNormalMaterial /> */}
         </mesh>
     )
 }
@@ -83,10 +72,12 @@ export default function App() {
 
     return (
         show && (
-            <Canvas camera={{ position: [0, 0.1, 3] }}>
+            <Canvas camera={{ position: [0, 0, 15] }}>
+                <Suspense>
                 <ambientLight />
                 <directionalLight position={[10, 10, 10]} />
-                <Suzanne />
+                <Pedro />
+                </Suspense>
             </Canvas>
         )
     )
