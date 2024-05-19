@@ -1,6 +1,6 @@
 <template>
     <Transition
-        
+        appear
         @enter="onEnter"
         @leave="onLeave"
         :css="false"
