@@ -26,6 +26,12 @@ export default{
         }
     },
 
+    setup(){
+        onMounted(() => {
+            console.log("look at me i'm fucker loading two times haha");
+        })
+    },
+
     methods: {
         onEnter(el, done) {
 
