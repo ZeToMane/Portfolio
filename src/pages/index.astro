@@ -67,7 +67,7 @@ for (const h2 of h2Elements) {
 }
 
 const pTexts = [];
-const pElements = document.getElementsByTagName('P');
+const pElements = Array.from(document.getElementsByTagName('P')).filter(p => !p.classList.contains('text-about'));
 for (const p of pElements) {
 	pTexts.push(p.innerText);
 	p.innerText = '';
