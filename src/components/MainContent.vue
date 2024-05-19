@@ -10,7 +10,7 @@
                         >
                     </h2>
                     <h2 class="text-black font-normal leading-normal">
-                        {{ tab === 'ÀPropos' ? 'À Propos' : tab }}
+                        {{ tab === 'APropos' ? 'À Propos' : tab }}
                     </h2>
                 </div>
             </button>
@@ -18,7 +18,9 @@
         <!-- Main content  -->
         <div class="flex p-2 items-center gap-2 w-full h-full flex-col aspect-[12]">
             <div class="flex w-full h-full p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
-                    <component :key="currentTab" :Open="isOpen" :is="tabs[currentTab]" class="tab"></component>
+                    <!-- <component :Open="isOpen" :is="tabs[currentTab]" class="tab"></component> -->
+                    <APropos :Open="isOpen" v-if="!OpenProject" class="tab"></APropos>
+                    <Projets :Open="isOpen" v-if="OpenProject" class="tab"></Projets>
 
             </div>
         </div>
@@ -38,23 +40,24 @@
 
 <script>
 import { ref } from 'vue';
-import ÀPropos from './ÀPropos.vue';
+import APropos from './ÀPropos.vue';
 import Projets from './Projets.vue';
 
-let currentTab = ref('ÀPropos');
+let currentTab = ref('APropos');
 let tabs = {
-    ÀPropos,
+    APropos,
     Projets
 };
 
 export default {
     data() {
         return {
-            isOpen: false
+            isOpen: false,
+            OpenProject: false
         };
     },
     components: {
-        ÀPropos,
+        APropos,
         Projets
     },
     setup() {
@@ -70,6 +73,11 @@ export default {
                 if(currentTab.value != tab){
                     this.isOpen = !this.isOpen
                     setTimeout(() => {
+                        if (tab === 'Projets') {
+                            this.OpenProject = true;
+                        } else {
+                            this.OpenProject = false;
+                        }
                         currentTab.value = tab;
                     }, 1300);
                 }
