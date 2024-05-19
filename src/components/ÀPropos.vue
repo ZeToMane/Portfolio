@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
 import TextScramble from '../script/scrambleText.js'
 
 export default{
