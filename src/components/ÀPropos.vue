@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
+import { onMounted, ref, onBeforeUnmount } from 'vue';
 import TextScramble from '../script/scrambleText.js'
 
 export default{
@@ -28,9 +28,20 @@ export default{
     },
 
     setup(){
+        const hasEntered = ref(false);
+
         onMounted(() => {
-            console.log("look at me i'm fucker loading two times haha");
+            console.log("ÀPropos component mounted");
         })
+
+        onBeforeUnmount(() => {
+            console.log("ÀPropos component before unmount");
+            hasEntered.value = false; // Reset hasEntered when the component is unmounted
+        });
+
+        return {
+            hasEntered
+        };
     },
 
     methods: {
@@ -46,6 +57,13 @@ export default{
             //     console.log(pTexts[i]);
             // }
             // done();
+
+            if (this.hasEntered) {
+                done();
+                return;
+            }
+
+            this.hasEntered = true;
 
             const pTexts = [
                 "Je suis actuellement étudiant en BUT MMI à l’IUT Bordeaux Montaigne, passionné par le développement web, frontend et backend, ainsi que par le design. Mon parcours dans le domaine du web a commencé dès mon enfance, lorsque mon père m’a appris à utiliser son ordinateur. Cette fascination initiale m'a poussé à explorer davantage le “World Wide Web”, où j'ai trouvé un terrain de jeu et d'émerveillement.",
