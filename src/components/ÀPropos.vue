@@ -41,8 +41,10 @@ export default{
             // done();
 
             const pTexts = [];
+            console.log("pTexts: " + pTexts);
             const pElements = el.getElementsByTagName('P');
             console.log("we on enter bro");
+
             for (const p of pElements) {
                 pTexts.push(p.innerText);
                 p.innerText = ' ';

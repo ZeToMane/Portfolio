@@ -18,7 +18,7 @@
         <!-- Main content  -->
         <div class="flex p-2 items-center gap-2 w-full h-full flex-col aspect-[12]">
             <div class="flex w-full h-full p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
-                    <component :Open="isOpen" :is="tabs[currentTab]" class="tab"></component>
+                    <component :key="currentTab" :Open="isOpen" :is="tabs[currentTab]" class="tab"></component>
 
             </div>
         </div>
