@@ -28,6 +28,9 @@ export default{
 
     methods: {
         onEnter(el, done) {
+            setTimeout(() => {
+
+            
             // const el = parent.document.getElementsByTagName('P');
 	
             // for (let i = 0; i < pTexts.length; ++i) {
@@ -56,6 +59,7 @@ export default{
                 console.log(pTexts[i]);
             }
             done();
+            },0)
         },
 
         onLeave(el, done) {
