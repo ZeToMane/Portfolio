@@ -6,7 +6,7 @@ import { easing } from 'maath'
 import {gsap} from 'gsap';
 
 
-function Pedro(props) {
+function Pedro({ canvasRef, ...props }) {
     const mesh = useRef()
     const { nodes, materials } = useGLTF('./me-finished100px.glb')
     const [dummy] = useState(() => new THREE.Object3D())
@@ -17,12 +17,11 @@ function Pedro(props) {
         }
 
         const handleMouseMove = (event) => {
-        const canvas = document.querySelector('canvas')
-        const rect = canvas.getBoundingClientRect()
+        const rect = canvasRef.current.getBoundingClientRect()
     
-        const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1
-        const mouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1
-        dummy.lookAt(mouseX, mouseY, 1)
+        const nMouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1
+        const nMouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1
+        dummy.lookAt(nMouseX, nMouseY, 1)
         }
 
         document.addEventListener('mousemove', handleMouseMove)
@@ -35,6 +34,22 @@ function Pedro(props) {
     useFrame((state, dt) => {
         easing.dampQ(mesh.current.quaternion, dummy.quaternion, 0.15, dt)
     })
+
+    useEffect(() => {
+        if (mesh.current) {
+            gsap.fromTo(
+                mesh.current.scale,
+                { x: 0, y: 0, z: 0 },
+                {
+                    x: 1,
+                    y: 1, 
+                    z: 1,
+                    duration: 1,
+                    ease: 'power4.inOut'
+                }
+            )
+        }
+    }, [])
 
     return (
         <mesh ref={mesh} geometry={nodes.head.geometry} material={materials['Flo_Head']} {...props}>
@@ -77,6 +92,7 @@ export default function App() {
     // }, []);
 
     const [show, setShow] = useState(false);
+    const canvasRef = useRef(null);
 
     useEffect(() => {
         
@@ -105,12 +121,12 @@ export default function App() {
 
     return (
         // show && (
-            <Canvas camera={{ position: [0, 0, 15] }}>
+            <Canvas camera={{ position: [0, 0, 18] }} ref={canvasRef}>
                 {show && (
                     <Suspense>
                     <ambientLight />
                     <directionalLight position={[10, 10, 10]} />
-                    <Pedro />
+                    <Pedro canvasRef={canvasRef} />
                     </Suspense>
                 )}
             </Canvas>

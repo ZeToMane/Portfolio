@@ -9,7 +9,8 @@ import ThreeCanvas from '../components/ThreeCanvas'
 
 
 <Main title="Pedro Barros Parente">
-	<main class="p-12 w-screen h-screen">
+	<div id="background-canvas" class="fixed w-full h-screen z-0"></div>
+	<main class="p-12 flex w-screen h-screen z-10">
 		<section class="grid grid-cols-12 grid-rows-2 gap-6 w-full h-full">
 			<Window title="Pedro Barros Parente" custom="col-span-4 row-span-1 scale-anim">
 				<!-- <img src="/profile-img.png" alt="" class="w-full h-full object-cover aspect-[12]"> -->
@@ -37,8 +38,8 @@ import ThreeCanvas from '../components/ThreeCanvas'
 				<MainContent client:load/>
 			</div>
 
-			<Window title="Demo" custom="col-span-2 row-span-2 scale-anim">
-
+			<Window title="Lastest Demo" custom="col-span-2 row-span-2 scale-anim">
+				<div id="demo-canvas" class="w-full h-full"></div>
 			</Window>
 		</section>
 	</main>
@@ -50,8 +51,12 @@ import ThreeCanvas from '../components/ThreeCanvas'
 	}
 </style>
 
+<script is:inline src="/js/p5.min.js"></script>
+
 <script>
 import {gsap} from 'gsap';
+
+import { createSketch, createSketch2 } from '../script/backgroundAnim.js';
 import TextScramble from '../script/scrambleText.js'
 
 const h2Texts = [];
@@ -78,6 +83,8 @@ for (const a of aElements) {
 
 window.addEventListener("DOMContentLoaded", function () {
 	console.log("ggggsap");
+	new p5(createSketch);
+	new p5(createSketch2);
 
 	gsap.delayedCall(0.3, restoreH2Texts);
 	gsap.delayedCall(0.2, restorePTexts);

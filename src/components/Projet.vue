@@ -13,80 +13,88 @@
 
     <!-- Wrapper container -->
     <div class="absolute z-10 top-0 left-0 w-full h-full">
-        <div class="flex w-full h-full bg-white border-t-2 border-l-2 border-r-4 border-b-4 border-solid border-black flex-col"> 
-            <!-- Head  -->
-            <div class="flex w-full px-2 py-1 items-center justify-between border-b-2 border-solid border-black gap-2">
-                <div class="flex w-full justify-start items-center gap-1">
-                    <h2 class="text-black font-normal leading-normal text-stroke">
-                        >
-                    </h2>
-                    <h2 class="text-black font-normal leading-normal">
-                        {{ projectData.title }}
-                    </h2>
-                </div>
-                <button @click="closeProjet" class="flex p-[2px] justify-center items-center self-center border-t-2 border-l-2 border-r-[3px] border-b-[3px] border-solid border-black bg-white group">
-                    <div class="flex py-[2px] px-2 justify-center items-center self-center gap-1 border-[1.5px] border-solid border-black bg-white">
-                        <!-- border-[1.5px] -->
+        <Transition 
+        appear
+        @enter="onEnter"
+        @leave="onLeave"
+        :css="false"
+        >
+            <div v-if="projectOpen" class="flex w-full h-full bg-white border-t-2 border-l-2 border-r-4 border-b-4 border-solid border-black flex-col"> 
+                <!-- Head  -->
+                <div class="flex w-full px-2 py-1 items-center justify-between border-b-2 border-solid border-black gap-2">
+                    <div class="flex w-full justify-start items-center gap-1">
                         <h2 class="text-black font-normal leading-normal text-stroke">
                             >
                         </h2>
                         <h2 class="text-black font-normal leading-normal">
-                            Fermer
+                            {{ projectData.title }}
                         </h2>
                     </div>
-                </button>
-            </div>
-            <!-- Main content  -->
-            <div class="flex p-2 items-center gap-2 w-full h-full flex-col aspect-[12]">
-                <div class="flex w-full h-full flex-col p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
-                    <!-- Carousell -->
-                    <div class="flex w-full justify-center">
-                        <div class="splide basis-4/5 border-2 border-solid border-black p-4">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li v-for="(imagePath, index) in projectData.imagePaths" :key="index" class="splide__slide">
-                                        <img :src="imagePath" alt="" class=" max-h-72 w-full object-cover">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="splide__arrows flex flex-row justify-between gap-8 mt-4 z-10 border-[3px] border-solid border-black">
-                                <div class="flex items-center gap-6 ml-2">
-                                    <button class="splide__arrow splide__arrow--prev">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" focusable="false"
-                                            ><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg
-                                        >
-                                    </button>
-                                    <button class="splide__arrow splide__arrow--next">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" focusable="false"
-                                            ><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg
-                                        >
-                                    </button>
+                    <button @click="closeProjet" class="flex p-[2px] justify-center items-center self-center border-t-2 border-l-2 border-r-[3px] border-b-[3px] border-solid border-black bg-white group">
+                        <div class="flex py-[2px] px-2 justify-center items-center self-center gap-1 border-[1.5px] border-solid border-black bg-white">
+                            <!-- border-[1.5px] -->
+                            <h2 class="text-black font-normal leading-normal text-stroke">
+                                >
+                            </h2>
+                            <h2 class="text-black font-normal leading-normal">
+                                Fermer
+                            </h2>
+                        </div>
+                    </button>
+                </div>
+                <!-- Main content  -->
+                <div class="flex p-2 items-center gap-2 w-full h-full flex-col aspect-[12]">
+                    <div class="flex w-full h-full flex-col p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
+                        <!-- Carousell -->
+                        <div class="flex w-full justify-center">
+                            <div class="splide basis-4/5 border-2 border-solid border-black p-4">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li v-for="(imagePath, index) in projectData.imagePaths" :key="index" class="splide__slide">
+                                            <img :src="imagePath" alt="" class=" max-h-72 w-full h-full object-cover">
+                                        </li>
+                                    </ul>
                                 </div>
-                                <a :href="projectData.liveLink" target="_blank" class="flex p-[2px] justify-center items-center self-center border-[3px] border-solid border-black bg-white no-underline">
-                                    <div class="flex py-[2px] px-2 justify-center items-center self-center gap-1 border-[1.5px] border-solid border-black bg-white">
-                                        <h2 class="text-black font-normal leading-normal text-stroke">
+                                <div class="splide__arrows flex flex-row justify-between gap-8 mt-4 z-10 border-[3px] border-solid border-black">
+                                    <div class="flex items-center gap-6 ml-2">
+                                        <button class="splide__arrow splide__arrow--prev">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" focusable="false"
+                                                ><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg
                                             >
-                                        </h2>
-                                        <h2 class="text-black font-normal leading-normal">
-                                            {{projectData.textLink}}
-                                        </h2>
+                                        </button>
+                                        <button class="splide__arrow splide__arrow--next">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" focusable="false"
+                                                ><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg
+                                            >
+                                        </button>
                                     </div>
-                                </a>
+                                    <a :href="projectData.liveLink" target="_blank" class="flex p-[2px] justify-center items-center self-center border-[3px] border-solid border-black bg-white no-underline">
+                                        <div class="flex py-[2px] px-2 justify-center items-center self-center gap-1 border-[1.5px] border-solid border-black bg-white">
+                                            <h2 class="text-black font-normal leading-normal text-stroke">
+                                                >
+                                            </h2>
+                                            <h2 class="text-black font-normal leading-normal">
+                                                {{projectData.textLink}}
+                                            </h2>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Project description -->
-                    <div class="flex w-full justify-center">
-                        <p class="basis-4/5">{{projectData.description}}</p>
+                        <!-- Project description -->
+                        <div class="flex w-full justify-center">
+                            <p class="basis-4/5">{{projectData.description}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Transition>
     </div>
 </template>
 
 <script type="module">
 import { onMounted } from 'vue';
+import {gsap} from 'gsap';
 import '/node_modules/@splidejs/splide/dist/js/splide.min.js'
 
 import Splide from '@splidejs/splide/dist/js/splide.esm'
@@ -94,6 +102,11 @@ import Splide from '@splidejs/splide/dist/js/splide.esm'
 
 
 export default {
+    data() {
+        return {
+            projectOpen: true
+        };
+    },
     props: {
         projectData: {
             type: Object,
@@ -102,8 +115,40 @@ export default {
     },
     methods: {
         closeProjet() {
-            this.$emit('close');
-        }
+            this.projectOpen = false;
+            console.log(this.projectOpen);
+            setTimeout(()=>{
+                this.$emit('close');
+                console.log("Close emitted")
+            }, 700);
+        },
+        
+        onEnter(el) {
+            console.log("Entering the dom")
+            gsap.fromTo(el, 
+                { 
+                    height: "0%",
+                    overflow: "hidden"
+                },
+
+                {
+                    height: "100%",
+                    duration: 1,
+                    ease: 'power3.out',
+                }
+            );
+        },
+
+        onLeave(el, done) {
+            console.log("Leaving the dom")
+            gsap.to(el, 
+                {
+                    height: "0%",
+                    duration: 1,
+                    ease: 'power3.out',
+                }
+            );
+        },
     },
     setup(){
         onMounted(() => {
