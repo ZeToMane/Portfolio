@@ -1,6 +1,6 @@
 <template>
     <Transition
-        appear
+        
         @enter="onEnter"
         @leave="onLeave"
         :css="false"
@@ -28,7 +28,6 @@ export default{
 
     methods: {
         onEnter(el, done) {
-            setTimeout(() => {
 
             
             // const el = parent.document.getElementsByTagName('P');
@@ -40,6 +39,7 @@ export default{
             //     console.log(pTexts[i]);
             // }
             // done();
+
             const pTexts = [];
             const pElements = el.getElementsByTagName('P');
             console.log("we on enter bro");
@@ -59,7 +59,6 @@ export default{
                 console.log(pTexts[i]);
             }
             done();
-            },0)
         },
 
         onLeave(el, done) {
