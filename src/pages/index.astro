@@ -10,9 +10,9 @@ import ThreeCanvas from '../components/ThreeCanvas'
 
 <Main title="Pedro Barros Parente">
 	<div id="background-canvas" class="fixed w-full h-screen z-0"></div>
-	<main class="p-12 flex w-screen h-screen z-10">
-		<section class="grid grid-cols-12 grid-rows-2 gap-6 w-full h-full">
-			<Window title="Pedro Barros Parente" custom="col-span-4 row-span-1 scale-anim">
+	<main class="p-12 flex w-screen h-screen z-10 2xl:h-fit sm:p-8">
+		<section class="section grid grid-cols-12 grid-rows-2 gap-6 w-full h-full 2xl:grid-rows-none">
+			<Window title="Pedro Barros Parente" custom="col-span-4 row-span-1 scale-anim md:col-span-6 sm:col-span-12">
 				<!-- <img src="/profile-img.png" alt="" class="w-full h-full object-cover aspect-[12]"> -->
 				<!-- <div class="w-full h-full" id="root">
 					<ThreeCanvas client:only="react"/>
@@ -20,35 +20,57 @@ import ThreeCanvas from '../components/ThreeCanvas'
 				<ThreeCanvas client:only="react" />
 			</Window>
 			
-			<Window title="Contact" custom="col-span-4 row-span-1 row-start-2 scale-anim">
+			<Window title="Contact" custom="col-span-4 row-span-1 row-start-2 scale-anim 2xl:row-start-auto lg:col-span-5 md:col-span-6 sm:col-span-12">
 				<Content custom="flex-col">
-					<p>Nom: <span>Pedro Barros Parente</span></p>
-					<p>Âge: <span>23 ans</span></p>
-					<p>E-mail: <span>parente.pb@gmail.com</span></p>
-					<p>Téléphone: <span>06 13 75 08 00</span></p>
+					<p class="md:text-sm">Nom: <span>Pedro Barros Parente</span></p>
+					<p class="md:text-sm">Âge: <span>23 ans</span></p>
+					<p class="md:text-sm">E-mail: <span>parente.pb@gmail.com</span></p>
+					<p class="md:text-sm">Téléphone: <span>06 13 75 08 00</span></p>
 				</Content>
 				<Content custom="justify-center flex-row">
-					<a href="">CV</a>
-					<a href="">Linkedin</a>
-					<a href="">GitHub</a>
+					<a href="https://drive.google.com/file/d/1luKJh2DxpSoFZNAczKFFxAmi-KnaduIz/view?usp=sharing" target="_blank">CV</a>
+					<a href="https://fr.linkedin.com/in/pedro-barros-parente-946945252?trk=people_directory" target="_blank">Linkedin</a>
+					<a href="https://github.com/ZeToMane" target="_blank">GitHub</a>
 				</Content>
 			</Window>
 
-			<div class="col-span-6 row-span-2 scale-anim">
+			<div class="col-span-6 row-span-2 scale-anim 2xl:row-start-2 2xl:col-span-8 2xl:row-span-1 lg:col-span-9 sm:col-span-12 sm:row-start-auto">
 				<MainContent client:load/>
 			</div>
 
-			<Window title="Lastest Demo" custom="col-span-2 row-span-2 scale-anim">
-				<div id="demo-canvas" class="w-full h-full"></div>
+			<Window title="Lastest Demo" custom="col-span-2 row-span-2 scale-anim overflow-hidden 2xl:col-span-4 2xl:row-span-2 lg:col-span-3 md:row-span-1 md:row-start-2 sm:col-span-12 sm:row-start-auto">
+				<div id="demo-canvas" class="w-full h-[95%] overflow-hidden"></div>
 			</Window>
 		</section>
 	</main>
 </Main>
 
-<style>
+<style lang="scss">
 	span{
 		letter-spacing: 2px;
 	}
+	// @media (max-width: 1535px) {
+	// 	section{
+	// 		grid-template-rows: repeat(auto-fill, minmax(0, auto));
+	// 	}
+	// }
+	@media (max-width: 1440px) {
+		.section{
+			grid-auto-rows: 1fr 2fr;
+		}
+	}
+	@media (max-width: 768px) {
+		.section{
+			grid-auto-rows: 1fr 2.5fr;
+		}
+	}
+	@media (max-width: 480px) {
+		.section{
+			grid-auto-rows: 2.5fr 2.5fr 6.2fr 2.5fr;
+		}
+	}
+	
+
 </style>
 
 <script is:inline src="/js/p5.min.js"></script>

@@ -63,6 +63,10 @@ const createSketch2 = (p) => {
         p.rect(p.random(p.width), p.random(p.height), p.random(p.width), p.random(p.height));
         p.fill(p.random([0, 255]));
     };
+
+    p.windowResized = () => {
+        p.resizeCanvas(containerWidth, containerHeight);
+    };
 };
 
 export { createSketch, createSketch2 };

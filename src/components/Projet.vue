@@ -47,11 +47,11 @@
                     <div class="flex w-full h-full flex-col p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
                         <!-- Carousell -->
                         <div class="flex w-full justify-center">
-                            <div class="splide basis-4/5 border-2 border-solid border-black p-4">
+                            <div class="splide basis-4/5 border-2 border-solid border-black p-4 sm:basis-full">
                                 <div class="splide__track">
                                     <ul class="splide__list">
                                         <li v-for="(imagePath, index) in projectData.imagePaths" :key="index" class="splide__slide">
-                                            <img :src="imagePath" alt="" class=" max-h-72 w-full h-full object-cover">
+                                            <img :src="imagePath" alt="" class=" max-h-96 w-full h-full object-cover 2xl:max-h-80">
                                         </li>
                                     </ul>
                                 </div>
@@ -83,7 +83,7 @@
                         </div>
                         <!-- Project description -->
                         <div class="flex w-full justify-center">
-                            <p class="basis-4/5">{{projectData.description}}</p>
+                            <p class=" basis-11/12 md:text-sm sm:text-xs">{{projectData.description}}</p>
                         </div>
                     </div>
                 </div>

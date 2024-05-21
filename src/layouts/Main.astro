@@ -10,17 +10,18 @@ const { title } = Astro.props
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-        <meta name="description" content="Lorem Ipsum">
+        <meta name="description" content="Étudiant en BUT MMI à l'IUT Bordeaux Montaigne. Passionné par le développement web, le design et la 3D, je présente ici mes projets et compétences en HTML, CSS, JavaScript, PHP, C#, Unity, Vue.js, Laravel, Node.js, Blender, et Three.js. Explorez mon parcours et contactez-moi pour des collaborations uniques.">
+		<meta name="title"content="Pedro Barros Parente - Développement Web et Design">
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="overflow-x-hidden">
 		<slot />
 	</body>
 </html>
 
-<style is:global>
+<style lang="scss" is:global>
 	@import url("/reset.css");
 
 	@font-face {
@@ -39,6 +40,15 @@ const { title } = Astro.props
 		font-family: 'macintosh';
 		font-weight: 400;
 		line-height: normal;
+		font-size: clamp(1rem, -1rem + 2.0833vw, 1.5rem);
+
+		word-spacing: 0.05em;
+        letter-spacing: 0.02em;
+        font-smoothing: antialiased;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        hyphens: auto;
+        overflow-wrap: break-word;
 	}
 
 	a{
@@ -74,6 +84,30 @@ const { title } = Astro.props
 
 	.scale-anim{
 		transform: scale(0);
+	}
+
+	#demo-canvas {
+		canvas{
+			width: 100% !important;
+		}
+	}
+
+	@media (max-width: 1450px){
+		#demo-canvas {
+			canvas{
+				height: 100% !important;
+			}
+		}
+	}
+	@media (max-width: 480px){
+		.text-about{
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 391px){
+		.text-about{
+			font-size: 12px;
+		}
 	}
 </style>
 

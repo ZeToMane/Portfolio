@@ -5,7 +5,7 @@
         @leave="onLeave"
         :css="false"
     >
-        <div v-show="!Open" class="tab flex flex-col h-full justify-between">
+        <div v-show="!Open" class="tab flex flex-col h-full gap-4">
             <p class="text-about">Je suis actuellement étudiant en BUT MMI à l’IUT Bordeaux Montaigne, passionné par le développement web, frontend et backend, ainsi que par le design. Mon parcours dans le domaine du web a commencé dès mon enfance, lorsque mon père m’a appris à utiliser son ordinateur. Cette fascination initiale m'a poussé à explorer davantage le “World Wide Web”, où j'ai trouvé un terrain de jeu et d'émerveillement.</p> 
             <p class="text-about">Aujourd'hui, je veux contribuer à cet univers en participant activement à la création de projets uniques. Cette passion se traduit par une volonté constante de me surpasser sur chaque projet.</p>
             <p class="text-about">En termes de compétences, j’ai de l'expérience avec une variété de langages et d'outils, notamment HTML, CSS (SCSS/SASS), JavaScript, et PHP. J'ai également de l’expérience avec le C#, ayant développé deux jeux sur Unity. Je m'efforce également d'explorer différents frameworks et bibliothèques, tels que Astro, Vue.js, Laravel, Node.js, GSAP et P5.js, afin de donner vie à mes idées.</p>
