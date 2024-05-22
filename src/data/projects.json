@@ -1,86 +1,107 @@
 [
     {
     "id": "1",
-    "title": "Project 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim vel est tincidunt hendrerit.",
-    "category": "Web Development",
+    "title": "Portfolio",
+    "description": "Ceci est mon petit bijou, mon portfolio, qui représente et reflète tout le travail et l'apprentissage accumulés au cours de ces dernières années. J'ai énormément appris, et mon évolution de la première à la deuxième année en témoigne. À cette époque, j'avais créé mon premier portfolio, réalisé exclusivement en HTML, CSS et JavaScript. Ce portfolio manquait de dynamisme, était rempli de bugs, n'était pas du tout responsive, et le fichier CSS était chaotique.\n\nAujourd'hui, j'ai pu créer ce nouveau portfolio à l'aide de plusieurs frameworks et bibliothèques. J'ai utilisé Astro pour optimiser les performances, des composants Vue.js pour ajouter des éléments interactifs, React avec React Three Fiber pour intégrer et animer un modèle 3D low poly de ma propre tête, et p5.js pour créer des éléments interactifs et démontrer mes derniers travaux en code créatif. Le tout est maintenant responsive, dans un style qui reflète ma passion pour le low-tech et les anciennes technologies aujourd'hui obsolètes.\n\nLa direction artistique de mon portfolio s'inspire énormément de l'interface du premier Mac OS, la première interface graphique (GUI) destinée au grand public, qui a révolutionné la façon dont nous interagissons avec nos ordinateurs en les rendant accessibles à tous. J'ai choisi cette inspiration pour annoncer l'aboutissement d'une passion qui devient mon métier et marquer le début d'une nouvelle phase de ma vie : le commencement de ma carrière en tant que développeur créatif / front-end.",
+    "category": "-Développement web",
     "imagePaths": [
-        "/profile-img.png",
-        "/profile-img.png",
-        "/profile-img.png"
+        "https://i.postimg.cc/DyxH2gG2/profile-img.png"
     ],
-    "liveLink": "https://www.example.com/project1",
-    "thumbnailPath": "profile-img.png",
-    "textLink": "Demo"
+    "liveLink": "",
+    "thumbnailPath": "https://i.postimg.cc/DyxH2gG2/profile-img.png",
+    "textLink": ""
     },
     
     {
     "id": "2",
-    "title": "Project 2",
-    "description": "Praesent gravida risus vel felis blandit, id ultricies eros fermentum. Vestibulum vehicula tristique ex.",
-    "category": "Mobile App",
+    "title": "Arthex",
+    "description": "Arthex est une expérience interactive conçue lors de ma deuxième année en BUT MMI pour la soirée annuelle Bacchanight au Musée des Beaux-Arts de Bordeaux. Cet événement permet aux étudiants de concevoir et présenter leurs projets aux visiteurs.\n\nLa consigne était de créer une expérience web mobile racontant une histoire à travers l'interaction des utilisateurs, en intégrant les œuvres d'art présentes dans une section du musée. Notre groupe a été assigné à la section dédiée à l’art baroque.\n\nArthex est né après des recherches sur l'art baroque. Dans notre histoire, dans un futur où les humains cohabitent avec des répliques humaines appelées Synthétiques, Arthex (un logiciel combinant “Art” et “Hex” pour hexadécimal) permet de recalibrer leurs systèmes et de détecter les \"Déviants\", capables de ressentir et d'exprimer des émotions, ce qui représente une menace pour la société. Dans l'expérience, vous incarnez un Synthétique testé par Arthex à travers les œuvres baroques pour évaluer vos paramètres et déterminer votre taux de déviance. Les œuvres baroques, avec leur accent sur les émotions et les drames humains, sont idéales pour tester les réactions émotionnelles.\n\nJ'ai occupé deux rôles : Directeur Artistique et Lead Developer. Artistiquement, le projet s'inspire de films comme The Matrix et Blade Runner, avec un objectif de créer une interface low-tech et rétro, dans l'esprit cyberpunk.\n\nPour le développement, j'ai opté pour une SPA (Single Page Application) avec Vue.js, permettant de charger toutes les ressources en une fois et d'éviter les problèmes de connexion. J'ai également utilisé Laravel pour permettre aux utilisateurs de créer et partager leur propre tableau à partir des éléments présents, bien que cette fonctionnalité n'ait pu être entièrement implémentée par manque de temps. Cependant, j'ai beaucoup appris sur Laravel et la librairie Inertia.js.\n\nMalgré les défis, voir les autres essayer notre expérience a été gratifiant. Je suis particulièrement satisfait et fier de ce projet.",
+    "category": "-Expérience Web Mobile",
     "imagePaths": [
-        "/profile-img.png",
-        "/profile-img.png",
-        "/profile-img.png"
+        "https://i.postimg.cc/Fz45LHFN/IMG-4394.jpg",
+        "https://i.postimg.cc/NMTvFHcd/IMG-4388.jpg",
+        "https://i.postimg.cc/tg8H9zL1/IMG-4389.jpg",
+        "https://i.postimg.cc/rs1TntZD/arthex-maquette.png"
     ],
-    "liveLink": "https://www.example.com/project2",
-    "thumbnailPath": "profile-img.png"
+    "liveLink": "https://arthex-app.osc-fr1.scalingo.io/",
+    "thumbnailPath": "https://i.postimg.cc/zXYXCq2L/arthex-thumb.png",
+    "textLink": "Voir"
     },
 
     {
     "id": "3",
-    "title": "Project 3",
-    "description": "Sed faucibus diam nec justo interdum, in dictum libero fermentum. Aliquam eu lacus sed libero varius vehicula.",
-    "category": "Data Science",
+    "title": "SmallPageEnergy",
+    "description": "SmallPageEnergy est un projet scolaire réalisé en groupe lors de ma deuxième année en BUT MMI, dans le cadre d'un workshop. Nous avons créé un site qui classe les pages d'accueil des grandes entreprises, principalement françaises, en fonction de leur taille. La page la plus légère est classée en première position. L'objectif est de susciter une discussion à travers une campagne de communication sur les réseaux sociaux, en incitant les entreprises à \"avoir la plus petite\". Ce projet joue sur la notion de \"qui a la plus grande\" courante dans le monde des affaires, en inversant la logique pour valoriser la sobriété numérique.\n\nDans ce projet, j'ai occupé le rôle de développeur front-end. Nous avons utilisé le framework Astro pour créer des pages statiques et légères, avec une taille maximale de 1 Mo, pour bien représenter nos idéaux de performance. Node.js a été utilisé pour développer notre API, qui recueille les données sur le poids des pages à l'aide de l'API Google Lighthouse, et transmet les résultats sous forme de fichier JSON à la partie front-end. Nous avons également utilisé Tailwind CSS.\n\nNotre objectif était aussi de sensibiliser le grand public à l'impact environnemental des pages web lourdes, qui participent aux émissions de carbone sur la planète. Nous avons mis à disposition diverses ressources pour permettre aux utilisateurs de s'informer et d'approfondir leurs connaissances sur ce sujet crucial.",
+    "category": "-Développement web",
     "imagePaths": [
-        "/profile-img.png",
-        "/profile-img.png",
-        "/profile-img.png"
+        "https://i.postimg.cc/FKLBVXBR/smallpageenergy.png",
+        "https://i.postimg.cc/Mp4LBptN/smallpageenergy-2.png"
     ],
-    "liveLink": "https://www.example.com/project3",
-    "thumbnailPath": "profile-img.png"
+    "liveLink": "https://smallpageenergy.mmibordeaux.com/",
+    "thumbnailPath": "https://i.postimg.cc/7Zbcb21S/logo-h1-spe-c-Yzp-TXW-1g5-DSN.webp",
+    "textLink": "Voir"
     },
 
     {
     "id": "4",
-    "title": "Project 4",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim vel est tincidunt hendrerit.",
-    "category": "Web Development",
-    "imagePaths": [
-        "/profile-img.png",
-        "/profile-img.png",
-        "/profile-img.png"
-    ],
-    "liveLink": "https://www.example.com/project1",
-    "thumbnailPath": "profile-img.png"
+    "title": "Boredom Escape",
+    "description": "Boredom Escape est un projet scolaire réalisé en groupe lors de ma deuxième année en BUT MMI, où nous avons une nouvelle fois utilisé le moteur Unity. Ce projet avait pour objectif de créer un jeu de type Zelda-like. Nous disposions de deux semaines, ce qui nous a permis de créer un jeu fini, bien que perfectible. Boredom Escape est un jeu très court avec un NPC, un type d'ennemi et un boss.\n\nLe jeu s'inspire des jeux rétro, avec un style visuel rappelant les premiers jeux Pokémon, et se base sur nos souvenirs d'enfance. L'histoire reflète ces moments d'ennui à l'école, pendant un cours ennuyeux, où nous comptions les secondes jusqu'à la récréation et nous évadions en gribouillant sur nos cahiers.\n\nBoredom Escape raconte l'histoire d'un enfant qui, pendant un cours de mathématiques avec la pire prof de son collège, commence à dessiner sur son cahier, créant tout un univers pour échapper à l'ennui. Tout le jeu se déroule dans ce cahier, comme si l'enfant dessinait les aventures en temps réel.\n\nLe personnage principal possède une épée qui lance des projectiles et un bouclier qui bloque les attaques lorsqu'il n'attaque pas. L'ennemi de base suit le joueur et tire des projectiles, et peut laisser tomber une cuisse de poulet qui régénère la vie du joueur (qui a trois vies) lorsqu'il est vaincu. Le boss surgit du sol et lance plusieurs projectiles.\n\nTous les sprites ont été réalisés sur Photoshop, basés sur les sprites du premier jeu Zelda. Pour ce projet, j'ai occupé les rôles de lead developer et de directeur artistique. J'ai pris en charge presque tout, du design au code et également la musique du jeu.\n\nCette expérience a été incroyable, remplie de nuits blanches et de passion ! Et j'ai pu davantage approfondir mes connaissances en Unity et en C#.",
+    "category": "-Jeux",
+    "imagePaths": "",
+    "liveLink": "https://nin0mmi.itch.io/boredom-escape",
+    "thumbnailPath": "https://i.postimg.cc/LXkQGBRF/boredom-escape.png",
+    "iframes": "https://www.youtube.com/embed/vn1p-g6rWC8",
+    "textLink": "Voir"
     },
     
     {
     "id": "5",
-    "title": "Project 5",
-    "description": "Praesent gravida risus vel felis blandit, id ultricies eros fermentum. Vestibulum vehicula tristique ex.",
-    "category": "Mobile App",
+    "title": "Blog’Art - Bordeaux Digi'Arts",
+    "description": "Blog'Art est un projet scolaire réalisé au cours de ma première année en BUT MMI, où notre groupe a conçu et développé un blog en utilisant PHP. Ce projet avait pour but de nous initier aux bases du PHP et de créer un blog de zéro.\n\nNous avons ainsi créé Bordeaux Digi'Arts, un blog dédié à partager l'univers de l'art digital dans la ville de Bordeaux. Nous avons développé un système d'articles et un système d'administration avec une base de données SQL, gérée via phpMyAdmin. Les fonctionnalités incluent la création d'utilisateurs, la connexion, ainsi que la possibilité de commenter les articles.\n\nMalheureusement, le site n'est plus en ligne, mais vous pouvez retrouver le GitHub du projet en cliquant sur le bouton en haut.\n\nDans ce projet, j'ai occupé le rôle de Directeur Artistique. J'ai conçu le site, développé la partie front-end et intégré les données de notre base de données (articles, commentaires, etc.) dans l'interface utilisateur.",
+    "category": "-Développement web",
     "imagePaths": [
-        "/profile-img.png",
-        "/profile-img.png",
-        "/profile-img.png"
+        "https://i.postimg.cc/XqHL0szm/home-digi-arts.png",
+        "https://i.postimg.cc/pVqq8dLC/articles-digi-arts.png"
     ],
-    "liveLink": "https://www.example.com/project2",
-    "thumbnailPath": "profile-img.png"
+    "liveLink": "https://github.com/zlamiia/BlogArt_Groupe9",
+    "thumbnailPath": "https://i.postimg.cc/hvpytDfC/bordeaux-digi-arts.png",
+    "textLink": "Voir"
     },
 
     {
     "id": "6",
-    "title": "Project 6",
-    "description": "Sed faucibus diam nec justo interdum, in dictum libero fermentum. Aliquam eu lacus sed libero varius vehicula.",
-    "category": "Data Science",
+    "title": "Refonte flop!EDT",
+    "description": "Ce projet de groupe réalisé en deuxième année du BUT MMI avait pour objectif d'approfondir nos compétences en design. Nous avons eu la chance de travailler sous la supervision de deux intervenants professionnels exceptionnels, Morgane Chevalier et Anthony Ferretti. Passionnés et attentifs, ils nous ont initiés à l'histoire du design et nous ont partagé leur expertise et expérience dans ce domaine.\n\nLe but était de procéder à la refonte d'un outil open-source créé par un professeur d'université en mathématiques, nommé flopEDT. Cet outil permet aux professeurs universitaires de créer et de gérer des emplois de temps.\n\nNous avons commencé par une analyse approfondie du design actuel de l'outil, identifiant des pistes potentielles d'amélioration. Ensuite, nous avons interviewé des utilisateurs pour mieux comprendre leurs besoins et leurs expériences. Ces échanges nous ont permis de recueillir des informations précieuses sur les attentes des utilisateurs.\n\nSuite à cette phase de brainstorming, de recherche et d'interviews, nous avons entrepris la refonte de flopEDT. Avec mon groupe, nous avons redessiné le site principal où l'on peut télécharger l'outil et consulter la documentation. Nos recherches ont révélé que flopEDT était difficile à prendre en main pour de nouveaux utilisateurs. Nous avons donc conçu une navigation accessible et réfléchie pour guider ces utilisateurs dans l'apprentissage de l'outil.\n\nNous avons opté pour un design simple, en suivant les principes du \"la forme suit la fonction\" et en préservant le caractère open source de l'outil, non corporatif. Cette approche a permis de créer une expérience utilisateur intuitive et agréable, facilitant l'adoption de flopEDT par les nouveaux utilisateurs.\n\nCe projet a été une expérience enrichissante, renforçant mes compétences en design et en expérience d’utilisateur.",
+    "category": "-Design",
     "imagePaths": [
-        "/profile-img.png",
-        "/profile-img.png",
-        "/profile-img.png"
+        "https://i.postimg.cc/j5vQz8t2/flop-home.png",
+        "https://i.postimg.cc/Gt5FfHB1/faq-flop.png"
     ],
-    "liveLink": "https://www.example.com/project3",
-    "thumbnailPath": "profile-img.png"
+    "liveLink": "https://www.figma.com/design/vR2Z2IABrIDNrPJMQGBH3p/Conviviel-Design?node-id=0%3A1&t=6VG7ia0ObPJtiPGG-1",
+    "thumbnailPath": "https://i.postimg.cc/qqRcQ8vL/cover-flop.png",
+    "textLink": "Voir"
+    },
+
+    {
+    "id": "7",
+    "title": "Terra Nova",
+    "description": "Terra Nova est un projet scolaire réalisé lors de ma première année en BUT MMI, où nous avons découvert les bases de Unity et du C#. L'objectif était de créer notre premier jeu avec Unity.\n\nAvec mon groupe, nous avons opté pour un jeu de type Shoot 'Em Up en vue isométrique. Bien que ce choix n'était pas idéal pour un premier projet, il a posé de nombreux défis que nous avons relevés avec succès.\n\nMalgré les obstacles, nous avons réussi à créer un jeu court, servant principalement de Proof of Concept (POC), le tout en une semaine seulement. Pour ce projet, j'ai utilisé des modèles gratuits pour les sprites du joueur et des ennemis, que j'ai rendus avec Blender pour créer les animations. De plus, j'ai réalisé les sprites pour le niveau du POC de la même manière. J'ai également animé le menu du jeu en utilisant Blender, en créant une animation avec une mesh de sphère et des shader nodes.\n\nDans ce projet, j'ai participé à la création des sprites du joueur et des ennemis, tout en occupant le rôle de lead developer. Cette expérience, malgré les nuits blanches, m'a permis d'acquérir des compétences précieuses en C#, en game design et en utilisation du moteur Unity.",
+    "category": "-Jeux",
+    "imagePaths": "",
+    "liveLink": "https://novateamgames.itch.io/terra-nova-save-your-home", 
+    "thumbnailPath": "https://i.postimg.cc/nh74dVp6/terra-nova.jpg",
+    "iframes": "https://www.youtube.com/embed/H-NKScG-ShA",
+    "textLink": "Voir"
+    },
+
+    {
+    "id": "8",
+    "title": "Signifiant et Signifié",
+    "description": "Ce projet d'introduction au motion design a été réalisé en groupe de deux lors de la première année du BUT MMI. Nous avons appris à utiliser Adobe After Effects pour créer des animations, Adobe Premiere pour le montage, ainsi qu'Adobe Illustrator pour créer nos assets.\n\nL'objectif était de créer une courte vidéo de motion design pour synthétiser le rendu d'un autre projet réalisé précédemment. Ce projet initial portait sur les théories de la communication, où chaque étudiant devait présenter de façon synthétique une théorie de la communication sélectionnée parmi une liste.\n\nPour notre motion design, nous avons choisi de présenter la théorie du signifiant et du signifié de Ferdinand de Saussure.\n\nStoryboard : Nous avons commencé par apprendre à réaliser des storyboards afin d'établir une ligne directrice claire pour notre motion design.\n\nCréation des Assets : Ensuite, nous avons créé nos assets avec Adobe Illustrator.\n\nAnimation et Montage : Nous avons ensuite animé nos assets avec Adobe After Effects et effectué le montage avec Adobe Premiere.\n\nSound Design : Enfin, nous avons ajouté les éléments de sound design pour compléter notre vidéo.\n\nNous avons produit une vidéo d'une minute présentant de manière claire et illustré la théorie du signifiant et du signifié de Saussure. Ce projet nous a permis de développer nos compétences en motion design, en animation, et en montage, tout en renforçant notre compréhension des théories de la communication.",
+    "category": "-Motion Design",
+    "imagePaths": "",
+    "liveLink": "",
+    "thumbnailPath": "https://i.postimg.cc/mrsQKxrh/signifiant-signifi.png",
+    "iframes": "https://www.youtube.com/embed/svnYjadz83g"
     }
 ]

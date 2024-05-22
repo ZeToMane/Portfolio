@@ -40,7 +40,7 @@ const { title } = Astro.props
 		font-family: 'macintosh';
 		font-weight: 400;
 		line-height: normal;
-		font-size: clamp(1rem, -1rem + 2.0833vw, 1.5rem);
+		font-size: clamp(1rem, -1rem + 2.0833vw, 1.3rem);
 
 		word-spacing: 0.05em;
         letter-spacing: 0.02em;
@@ -98,6 +98,10 @@ const { title } = Astro.props
 				height: 100% !important;
 			}
 		}
+
+		// P, h1, h2, h3, a{
+		// 	font-size: 2cqh
+		// }
 	}
 	@media (max-width: 480px){
 		.text-about{

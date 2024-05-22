@@ -47,7 +47,20 @@
                     <div class="flex w-full h-full flex-col p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
                         <!-- Carousell -->
                         <div class="flex w-full justify-center">
-                            <div class="splide basis-4/5 border-2 border-solid border-black p-4 sm:basis-full">
+                            <div v-if="projectData.iframes" class="basis-4/5 border-2 border-solid border-black p-4 min-h-80 mb-2 sm:mb-4 sm:basis-full">
+                                <iframe width="100%" height="100%" :src="projectData.iframes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <a v-if="projectData.liveLink" :href="projectData.liveLink" target="_blank" class="flex p-[2px] mb-1 justify-center items-center self-center border-[3px] border-solid border-black bg-white no-underline">
+                                    <div class="flex py-[2px] px-2 justify-center items-center self-center gap-1 bg-white">
+                                        <h2 class="text-black font-normal leading-normal text-stroke">
+                                            >
+                                        </h2>
+                                        <h2 class="text-black font-normal leading-normal">
+                                            {{projectData.textLink}}
+                                        </h2>
+                                    </div>
+                                </a>
+                            </div>
+                            <div v-if="!projectData.iframes" class="splide basis-4/5 border-2 border-solid border-black p-4 sm:basis-full">
                                 <div class="splide__track">
                                     <ul class="splide__list">
                                         <li v-for="(imagePath, index) in projectData.imagePaths" :key="index" class="splide__slide">
@@ -56,7 +69,7 @@
                                     </ul>
                                 </div>
                                 <div class="splide__arrows flex flex-row justify-between gap-8 mt-4 z-10 border-[3px] border-solid border-black">
-                                    <div class="flex items-center gap-6 ml-2">
+                                    <div class="flex items-center gap-6 ml-2 py-2">
                                         <button class="splide__arrow splide__arrow--prev">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" focusable="false"
                                                 ><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg
@@ -68,7 +81,7 @@
                                             >
                                         </button>
                                     </div>
-                                    <a :href="projectData.liveLink" target="_blank" class="flex p-[2px] justify-center items-center self-center border-[3px] border-solid border-black bg-white no-underline">
+                                    <a v-if="projectData.liveLink" :href="projectData.liveLink" target="_blank" class="flex p-[2px] justify-center items-center self-center border-[3px] border-solid border-black bg-white no-underline">
                                         <div class="flex py-[2px] px-2 justify-center items-center self-center gap-1 border-[1.5px] border-solid border-black bg-white">
                                             <h2 class="text-black font-normal leading-normal text-stroke">
                                                 >
@@ -83,7 +96,7 @@
                         </div>
                         <!-- Project description -->
                         <div class="flex w-full justify-center">
-                            <p class=" basis-11/12 md:text-sm sm:text-xs">{{projectData.description}}</p>
+                            <p id="para" class=" basis-11/12 md:text-sm sm:text-xs">{{projectData.description}}</p>
                         </div>
                     </div>
                 </div>
@@ -182,5 +195,7 @@ export default {
 .splide__arrow--prev{
     transform: rotate(180deg);
 }
-
+#para{
+    white-space: break-spaces;
+}
 </style>

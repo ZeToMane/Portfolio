@@ -17,7 +17,7 @@
         </div>
         <!-- Main content  -->
         <div class="flex p-2 items-center gap-2 w-full h-full flex-col aspect-[12]">
-            <div class="flex w-full h-full p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
+            <div class="holder flex w-full h-full p-4 items-start gap-4 self-stretch border-t-2 border-l-2 border-r-4 border-b-4 border-black border-solid overflow-y-auto aspect-[12]">
                     <component :Open="isOpen" :is="tabs[currentTab]" class="tab"></component>
                     <!-- <APropos :Open="isOpen" v-if="!OpenProject" class="tab"></APropos>
                     <Projets :Open="isOpen" v-if="OpenProject" class="tab"></Projets> -->
@@ -101,4 +101,10 @@ export default {
             }
         }
     }
+
+    /* @media (max-width: 480px) {
+        .holder{
+            overflow-y: unset;
+        }
+    } */
 </style>

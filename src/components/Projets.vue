@@ -10,12 +10,12 @@
       >
         <li v-for="(project, index) in projects" :key="index" :data-index="index" v-if="Open" class="flex h-full sm:min-h-24">
           <button @click="openModal(project)" class="flex flex-row w-full min-h-[20%] border-2 border-black border-solid p-2 gap-2">
-              <div class="h-full basis-1/3 p-1 border-2 border-black border-solid">
+              <div class="h-full basis-1/3 p-1 sm:p-0 border-2 border-black border-solid">
                   <img :src="project.thumbnailPath" alt="" class="w-full h-full">
               </div>
-              <div class="flex flex-col w-full h-full justify-center items-start sm:items-center">
-                  <p>Titre: {{ project.title }}</p>
-                  <p>Categorie: {{ project.category }}</p>
+              <div class="flex flex-col gap-1 w-full h-full justify-center items-start sm:items-center">
+                  <p>{{ project.title }}</p>
+                  <p>{{ project.category }}</p>
               </div>
           </button>
         </li>
